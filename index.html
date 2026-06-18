@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>INTERPRIX UNITED LLC | Carrier Setup Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#1f2937;
+}
+
+header{
+    background:#111827;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+header h1{
+    font-size:2rem;
+}
+
+header p{
+    margin-top:10px;
+    color:#d1d5db;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.section-title{
+    margin-top:30px;
+    margin-bottom:15px;
+    color:#111827;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:10px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.full-width{
+    grid-column:1 / -1;
+}
+
+.upload-box{
+    border:2px dashed #d1d5db;
+    padding:20px;
+    border-radius:10px;
+    background:#fafafa;
+}
+
+.checkbox-container{
+    margin-top:20px;
+}
+
+button{
+    width:100%;
+    margin-top:30px;
+    padding:15px;
+    background:#111827;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1f2937;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#6b7280;
+}
+
+@media(max-width:768px){
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>INTERPRIX UNITED LLC</h1>
+    <p>Carrier Setup & Load Verification Portal</p>
+</header>
+
+<div class="container">
+
+<form id="carrierForm">
+
+<h2 class="section-title">Company Information</h2>
+
+<div class="form-grid">
+
+<input type="text" placeholder="Company Name" required>
+<input type="text" placeholder="MC Number" required>
+
+<input type="text" placeholder="DOT Number">
+<input type="email" placeholder="Company Email" required>
+
+<input type="text" placeholder="Contact First Name" required>
+<input type="text" placeholder="Contact Last Name" required>
+
+<input type="tel" placeholder="Contact Phone Number" required>
+
+</div>
+
+<h2 class="section-title">Driver Information</h2>
+
+<div class="form-grid">
+
+<input type="text" placeholder="Driver First Name" required>
+<input type="text" placeholder="Driver Last Name" required>
+
+<input type="tel" placeholder="Driver Phone Number" required>
+<input type="text" placeholder="Driver License Number" required>
+
+</div>
+
+<h2 class="section-title">Truck Information</h2>
+
+<div class="form-grid">
+
+<input type="text" placeholder="Truck Year" required>
+<input type="text" placeholder="Truck Make" required>
+
+<input type="text" placeholder="Truck Model" required>
+<input type="text" placeholder="Last 6 Digits VIN" required>
+
+<input type="text" placeholder="Truck Number">
+<input type="text" placeholder="Truck Plate Number">
+
+</div>
+
+<h2 class="section-title">Trailer Information</h2>
+
+<div class="form-grid">
+
+<select required>
+<option value="">Select Trailer Type</option>
+<option>Dry Van</option>
+<option>Reefer</option>
+<option>Flatbed</option>
+<option>Step Deck</option>
+<option>Power Only</option>
+<option>Hotshot</option>
+</select>
+
+<input type="text" placeholder="Trailer Number">
+
+<input type="text" placeholder="Trailer Plate Number">
+
+</div>
+
+<h2 class="section-title">Document Uploads</h2>
+
+<div class="form-grid">
+
+<div class="upload-box">
+<label>W9</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Authority</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Certificate of Insurance (COI)</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Driver License</label>
+<input type="file">
+</div>
+
+<div class="upload-box">
+<label>Truck Pictures</label>
+<input type="file" multiple>
+</div>
+
+<div class="upload-box">
+<label>Trailer Pictures</label>
+<input type="file" multiple>
+</div>
+
+</div>
+
+<h2 class="section-title">Carrier Certification</h2>
+
+<div class="checkbox-container">
+
+<label>
+<input type="checkbox" required>
+
+I certify that all information provided is accurate and complete. I confirm that I am the authorized carrier operating under the MC number submitted and that I am not engaging in double brokering or fraudulent activity.
+</label>
+
+</div>
+
+<button type="submit">
+Submit Carrier Package
+</button>
+
+</form>
+
+</div>
+
+<footer>
+Jose Avila | INTERPRIX UNITED LLC | MC #1722477
+</footer>
+
+<script>
+document.getElementById("carrierForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    alert("Carrier package submitted successfully.");
+
+    // Google Sheets integration coming next.
+});
+</script>
+
+</body>
+</html>
